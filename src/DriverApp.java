@@ -34,9 +34,37 @@ public class DriverApp {
 		
 		patient.getPatientInfo();
 		
+		System.out.print("Enter three floating-point values separated by spaces: ");
 		
+		double number1 = input.nextDouble(); // read first double
+		double number2 = input.nextDouble(); // read second double
+		double number3 = input.nextDouble(); // read third double
 		
 
+	}
+	
+	//return the maximum of its three double parameters
+	public static double maximum(double first, double second, double third) {
+		
+		double maximumValue = first; // Assume x is the largest to start
+		
+		// determine whether y is greater than maximumValue
+		if(second > maximumValue) {
+			maximumValue = second;
+		}
+		
+		
+		//determine whether z is greater than maximumValue
+		if(third > maximumValue) {
+			maximumValue = third;
+		}
+		
+		// Can also be writing as follows:
+		// Math.max(first, Math.max(second, third));
+		
+		
+		return maximumValue;
+		
 	}
 
 }
