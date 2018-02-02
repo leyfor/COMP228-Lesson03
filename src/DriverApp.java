@@ -11,6 +11,20 @@ public class DriverApp {
 		int myPoint = 0;
 		//  Status gameStatus; // 
 		
+		try {
+			System.out.println("Enter the number of dice: ");
+			numDice = input.nextInt();
+			
+			System.out.println("Enter the number of side: ");
+			numSides = input.nextInt();
+			
+			System.out.printf("You rolled %d%n", rollDice(numDice, numSides));
+			
+		} catch (Exception e) {
+			System.out.println("You entered an invalid data!");
+			
+		}
+		
 		System.out.println("Enter the number of dice: ");
 		numDice = input.nextInt();
 		
