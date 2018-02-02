@@ -5,12 +5,24 @@ public class DriverApp {
     public static Patient patient;
 	public static void main(String[] args) {
 		
-		System.out.println(rollDice(3, 6));
+		Scanner input = new Scanner(System.in); 
+		int numDice = 2;  // Default number of dice
+		int numSides = 6; // Default number of side
+		int myPoint = 0;
+		//  Status gameStatus; // 
+		
+		System.out.println("Enter the number of dice: ");
+		numDice = input.nextInt();
+		
+		System.out.println("Enter the number of side: ");
+		numSides = input.nextInt();
+		
+		System.out.printf("You rolled %d%n", rollDice(numDice, numSides));
 		
 		RandomInteger();
 		RandomNumbers();
 		
-		Scanner input = new Scanner(System.in); 
+		
 		
 		System.out.print("Please enter your First Name: ");
 		String patientFName = input.nextLine();
@@ -111,11 +123,25 @@ public class DriverApp {
 	}
 	
 	public static int rollDice(int numDice, int numSides) {
+		
+		// force minimum of one dice
+		if(numDice < 1) {
+			numDice = 1;
+		}
+		
+		// Force minimum of 4 sides
+		
+		if(numSides < 4) {
+			numSides = 4;
+		}
+		
+		System.out.printf("You selected %d dice with %d sides %n", numDice, numSides);
+		
 		SecureRandom generateRandom = new SecureRandom();
 		int result = 0;
 		//int[] dice = new int[numDice];
 		
-		for (int index = 0; index <= numDice - 1; index = index + 1 ) {
+		for (int index = 0; index < numDice; index = index + 1 ) {
 			result += generateRandom.nextInt(numSides) + 1;
 		}
 		
